@@ -1,24 +1,21 @@
-#define GLFW_INCLUDE_VULKAN
-#include <GLFW/glfw3.h>
+// enable mem leak detection
+#if _DEBUG
+#define _CRTDBG_MAP_ALLOC
+#include <crtdbg.h>
+#endif
 
+#include "Engine.h"
 #include <iostream>
 
 int main(int argc, char** argv) {
-    
-    glfwInit();
-    glfwWindowHint(GLFW_CLIENT_API, GLFW_NO_API);
-    GLFWwindow* window = glfwCreateWindow(800, 600, "WindOwO", nullptr, nullptr);
+#ifdef _DEBUG
+    _CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
+#endif
 
-    uint32_t extensionCount = 0;
-    vkEnumerateInstanceExtensionProperties(nullptr, &extensionCount, nullptr);
+    Engine engine;
+    engine.init();
+    engine.run();
+    engine.cleanup();
 
-    std::cout << extensionCount << " extensions supported\n";
-
-    while (!glfwWindowShouldClose(window)) {
-        glfwPollEvents();
-    }
-
-    glfwDestroyWindow(window);
-    glfwTerminate();
     return 0;
 }

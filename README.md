@@ -1,10 +1,10 @@
-### current dependencies
+#### current dependencies
  * glfw
  * glm
  * vma
  * stb_image
+ * clay
 
-### Todo:
+#### ToDo:
  * add assimp/tinyobjloader (or some alternative)
- * add clay ui
- * add {fmt} to replace iostream
+ * add fmt to replace iostream
