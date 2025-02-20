@@ -1,11 +1,11 @@
 # Game Engine in vulkan and c++ :3
 
 ## current dependencies
- * glfw
- * glm
- * vma
- * stb_image
- * clay
+ * glfw		 - windowing
+ * glm		 - math
+ * vma		 - vulkan memory allocation
+ * stb_image - image loading
+ * clay		 - ui layout
 
 ## ToDo:
  * Add dependencies:

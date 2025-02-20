@@ -4,14 +4,8 @@ Engine::Engine() {
 
 }
 
-void Engine::init() {
+void Engine::Run() {
 
-}
 
-void Engine::run() {
-
-}
-
-void Engine::cleanup() {
 
 }
