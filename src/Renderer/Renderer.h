@@ -3,7 +3,6 @@
 #include <Core/Window.h>
 
 #include <vulkan/vulkan.h>
-#include <vulkan/vk_enum_string_helper.h>
 #include <vma/vk_mem_alloc.h>
 
 #include <glm/mat4x4.hpp>
@@ -24,9 +23,7 @@
 class Renderer {
 public:
 
-	bool _isInitialized = false;
 	size_t _frameNumber = 0;
-	bool stop_rendering = false;
 	
 	void init(GLFWwindow* window);
 	void deinit();

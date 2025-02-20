@@ -12,10 +12,13 @@ void Window::init() {
 	glfwWindowHint(GLFW_RESIZABLE, GLFW_FALSE);
 
 	handle = glfwCreateWindow(WIDTH, HEIGHT, "Window", nullptr, nullptr);
+	if (!handle) {
+		std::cerr << "Error: Failed to create window\n";
+		abort();
+	}
 
 }
 
 void Window::deinit() {
-	glfwDestroyWindow(handle);
 	glfwTerminate();
 }

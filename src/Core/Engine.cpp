@@ -2,15 +2,13 @@
 
 void Engine::Run() {
 
-	Window window;
-	window.init();
+	window = new Window();
+	window->init();
 
-	Renderer renderer;
-	renderer.init(window.handle);
+	renderer = new Renderer();
+	renderer->init(window->handle);
 
-	while (!glfwWindowShouldClose(window.handle)) {
-
-
+	while (!glfwWindowShouldClose(window->handle)) {
 
 		glfwPollEvents();
 	}
@@ -19,6 +17,10 @@ void Engine::Run() {
 }
 
 void Engine::cleanup() {
+
 	window->deinit();
+	delete window;
+
 	renderer->deinit();
+	delete renderer;
 }

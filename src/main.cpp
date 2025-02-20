@@ -12,8 +12,6 @@ int main(int argc, char** argv) {
     _CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
 #endif
 
-    // TODO: parse cmd line args here
-
     Engine engine;
     engine.Run();
     return 0;
